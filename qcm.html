@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="style_CSS/Style.css">
+    <title>&#x1F3AE; PIXEL LEGACY - QCM</title>
+    <style>
+        .question {
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+    </style>
+    <script>
+        let currentQ = 1;
+        let score = 0;
+
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="q'+ currentQ +'"]:checked');
+
+            if (selectedAnswer !== null) {
+                const currentQval = document.querySelector('#question' + currentQ);
+                currentQval.classList.remove('active');
+
+                currentQ++;
+
+                const nextQ = document.querySelector('#question' + currentQ);
+                if (nextQ) {
+                    nextQ.classList.add('active');
+                } else {
+                    showResult();
+                }
+            } else {
+                alert("Aucune réponse sélectionnée !");
+            }
+        }
+
+        function showResult() {
+
+			for (let k = 1; k <= 8; k++) {
+				if (k === 1 || k === 5 || k === 7){
+					let Anwser1 = document.getElementById("q" + k +"1");
+					let Anwser2 = document.getElementById("q" + k +"2");
+					if (Anwser1.checked && Anwser2.checked){
+						score++
+					}
+				} else {
+					let Anwser = document.getElementById("q" + k);
+					if (Anwser.checked){
+						score++
+					}
+				}
+			}
+			if (score === 0){
+				alert("Tu n'as pas lu. :(")
+			}
+			if (score === 8){
+				alert("Bravo !")
+			}
+			document.getElementById('result').textContent = 'Votre score est : ' + score + '/8';
+			
+			let bug = "'qcm.html'"
+			var ajout=('<button class="suivant" onclick="window.location.href = '+ bug +';">Click ici si tu veux refaire.</button>');
+			var selection = document.getElementById("reset");
+			selection.innerHTML = ajout;
+		}
+    </script>
+</head>
+<body>
+    <!-- Haut de page (début) -->
+    <div id="haut_de_page">
+        <div class="dhaut" id="4divhaut"> <a id="a1" href="🎮Index.html"> <img id="acceuil" alt="logo" title="Acceuil" src="Image/logo.png"/> </a> </div>
+        <button class="dhaut2" onclick="window.location.href = 'evolution.html';"> <b>Evolution</b> </button>
+        <button class="dhaut2" onclick="window.location.href = 'exemple.html';"> <b>Exemple</b> </button>
+        <button class="dhaut3" onclick="window.location.href = 'qcm.html';"> <b>QCM</b> </button>
+    </div>
+    <!-- Haut de page (fin) -->
+    <h1>BIENVENUE</h1>
+    <p class="p1">Prêt pour un petit QCM ?</p>
+    <div class="question active" id="question1">
+		<h3>Question 1: Quelle sont les deux premier jeux vidéos commercialisés ?</h3>
+		<label>1. <input type="checkbox" name="q1"> Pac-Man</label>
+		<br><label>2. <input type="checkbox" id="q11" name="q1"> Spacewar!</label>
+		<br><label>3. <input type="checkbox" name="q1"> DOOM</label>
+		<br><label>4. <input type="checkbox" id="q12" name="q1"> Pong</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question2">
+		<h3>Question 2: D'où viens l'idée de faire des jeux vidéo ?</h3>
+		<label>1. <input type="radio" name="q2"> D'un garage</label>
+		<br><label>2. <input type="radio" name="q2"> D'une université</label>
+		<br><label>3. <input type="radio" id="q2" name="q2"> Des universités</label>
+		<br><label>4. <input type="radio" name="q2"> Des Homme de cro-magnon</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question3">
+		<h3>Question 3: Quand l'idées de jeux informatique est-elle apparue ?</h3>
+		<label>1. <input type="radio" name="q3"> -3000</label>
+		<br><label>2. <input type="radio" name="q3"> 1945</label>
+		<br><label>3. <input type="radio" name="q3"> 2000</label>
+		<br><label>4. <input type="radio" id="q3" name="q3"> 1950</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question4">
+		<h3>Question 4: Quel est le nom du site ?</h3>
+		<label>1. <input type="radio" name="q4"> Jeux vidéo</label>
+		<br><label>2. <input type="radio" name="q4"> DOOM</label>
+		<br><label>3. <input type="radio" id="q4" name="q4"> Autre</label>
+		<br><label>4. <input type="radio" name="q4"> Mortal Kombat</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question5">
+		<h3>Question 5: Quel est le but et le thème du site ?</h3>
+		<label>1. <input type="checkbox" name="q5"> Te faire perdre ton temps</label>
+		<br><label>2. <input type="checkbox" id="q51" name="q5"> Te faire apprendre des truc</label>
+		<br><label>3. <input type="checkbox" name="q5"> Les gateaux</label>
+		<br><label>4. <input type="checkbox" id="q52" name="q5"> Les jeux vidéo</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question6">
+		<h3>Question 6: Est-ce que c'était simple de faire des jeux au débuts ?</h3>
+		<label>1. <input type="radio" name="q6"> oui</label>
+		<br><label>2. <input type="radio" id="q6" name="q6"> non</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question7">
+		<h3>Question 7: Avec quoi faisait ton les premiers jeux vidéo ?</h3>
+		<label>1. <input type="checkbox" name="q7"> Des casseroles</label>
+		<br><label>2. <input type="checkbox" name="q7"> De l'héxadécimal</label>
+		<br><label>3. <input type="checkbox" id="q71" name="q7"> Du binaire</label>
+		<br><label>4. <input type="checkbox" id="q72" name="q7"> Des  ordinateurs</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question8">
+		<h3>Question 8: Quel est la révolution de 2010 ?</h3>
+		<label>1. <input type="radio" id="q8" name="q8"> La réalité virtuel</label>
+		<br><label>2. <input type="radio" name="q8"> Le WEB</label>
+		<br><label>3. <input type="radio" name="q8"> Les canapés portatifs</label>
+		<br><label>4. <input type="radio" name="q8"> La raclette</label>
+		<br><button class="suivant" onclick="nextQuestion()">Suivant</button>
+	</div>
+	<div class="question" id="question9">
+		<h3>Résultat</h3>
+		<p id="result"></p>
+		<br><button class="suivant" id="reset" onclick="showResult()">Résultat</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+html{
+	font-family: Comic Sans MS;
+}
+body{
+	background-color: #E3E3E3;
+}
+/*Haut de page (début)*/
+#haut_de_page{
+	text-align: center;
+	background-color: #8C8B8D;
+	display: grid;
+	padding: 0;
+	grid-template-columns: 1.5fr 1fr 1fr 1fr;
+	grid-auto-rows: auto;
+}
+#acceuil{
+	width: 9%;
+}
+button{
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 110%;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.dhaut{
+	grid-row: 1;
+}
+.dhaut2{
+	grid-row: 1;
+	transition: all 0.5s;
+}
+.dhaut3{
+	grid-row: 1;
+	border-bottom: 2px solid black;
+}
+.dhaut2:hover{
+	background-color: #7C7B7D;
+	border-bottom: 2px solid black;
+	color: blue;
+}
+/*Haut de page (fin)*/
+h1,p,h2{
+	text-align: center;
+}
+.p2{
+	font-size: 120%
+}
+.p1{
+	font-size: 150%
+}
+.title{
+	cursor: default;
+}
+table{
+	border-collapse: collapse; /*bordure tableau fusionner */
+	background-color: #454545;
+	color: #C8C8C8;
+	text-align: center;
+}
+#tabevo{
+	margin: auto;
+}
+.table{
+	color: #C8C8C8;
+}
+.tablehaut{
+	background-color: #383838;
+}
+td,th{
+	border: 2px solid black;
+}
+.suivant{
+	color: #E3E3E3;
+	background: #373737;
+	border: 2px solid;
+	cursor: pointer;
+	font-size: 120%;
+	border-radius: 30% 15%;
+}
+#result{
+	text-align: left;
+}
+.pbox{
+	background-color: #BCBBBD;
+	text-align: center;
+	border-radius: 15%;
+	width: 90%;
+	margin: auto;
+	padding: 0.1%;
+}
+#secret{
+	cursor: ;
+}
